@@ -8,7 +8,7 @@ with open("corncob_lowercase.txt", "r") as f:
 words = [e for e in data.split("\n") if not e==""]
 
 LEX = words
-for x in ";.:,?!\'\"0123456789s":
+for x in ";.:,?!\'\"0123456789s()":
     LEX.append(x)
 testSentence = "The parrot's beak that she cleans, even though it is neat." #Pascal's
 
@@ -22,7 +22,7 @@ def wordToIndex(w, lexicon):
 def splitClean(s):
     res = ""
     for c in s:
-        if c in ';.:,?!\'\"':
+        if c in ';.:,?!\'\"()':
             res+=" "+c+" "
         else:
             res+=c
